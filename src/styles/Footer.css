@@ -1,0 +1,57 @@
+/* styles/Footer.css */
+.footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px 0;
+  text-align: center;
+  animation: slide-up 0.5s ease;
+}
+
+.footer-content {
+  opacity: 0; /* Initially hide content */
+  animation: fade-in 0.5s ease forwards;
+  animation-delay: 0.3s; /* Delay content animation */
+}
+
+.footer-content p {
+  margin: 10px 0; /* Add margin to create spacing between paragraphs */
+}
+
+.footer-content a {
+  color: #007bff; /* Change link color */
+}
+
+/* Make footer responsive */
+@media (max-width: 768px) {
+  .footer-content p {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-content p {
+    font-size: 12px; /* Further decrease font size for smaller screens */
+  }
+}
+/* Animation keyframes */
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

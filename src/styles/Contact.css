@@ -1,0 +1,268 @@
+/* Add styles for the contact information or form */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.midcon {
+  margin-top: 5%;
+  display: block;
+  text-align: center;
+  max-width: 60%;
+  min-width: 20%;
+  opacity: 0; /* Initially hidden */
+  animation: slideFromTop 1s forwards; /* Apply animation */
+}
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.midcon h1 {
+  font-size: 300%;
+  font-weight: lighter;
+  color: rgb(10, 74, 110);
+}
+
+.midcon p {
+  font-family: 'open sans', sans-serif;
+  font-size: 15px;
+  color: rgb(10, 74, 110);
+  line-height: 1.875em;
+  margin-bottom: 20px; /* Adjusted margin for responsiveness */
+}
+
+.Ccontent {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  background: rgb(250, 250, 242);
+  opacity: 0; /* Initially hidden */
+  animation: slideFromLeft 1s forwards; /* Apply animation */
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Ccontent > img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.just_Ccontent {
+  color: rgb(12, 14, 21);
+  width: 50%;
+  
+  
+}
+
+.transparent-form {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:5%;
+}
+
+.address {
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flexbox;
+  text-align: left;
+  margin-left: -30%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+
+.contact-details{
+  display: grid;
+  
+ 
+}
+
+.input-label {
+
+  font-size: small;
+  padding: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-fields {
+  padding: 5%;
+  color: rgb(44, 44, 44);
+  margin-bottom: 10%;
+}
+
+.input-fields input,
+.input-fields textarea {
+  margin-top: -2%;
+  width: 30%;
+  padding: 3%;
+  border-top: 0px;
+  border-left: 0px solid #000;
+  border-right: 0px;
+  border-bottom: 1% solid rgb(12, 12, 12);
+  border-radius: 1%;
+  background-color: rgb(250, 250, 242);
+  margin-bottom: 4%;
+  transition: border-color 0.3s ease; /* Transition effect for border color */
+}
+
+.input-fields textarea {
+  height: auto;
+}
+
+/* Style for focus state */
+.input-fields input:focus,
+.input-fields textarea:focus {
+  outline: none;
+}
+
+/* Hover effect for input fields */
+.input-fields input:hover,
+.input-fields textarea:hover {
+  border-bottom-color: red; /* Change border color on hover */
+}
+
+.input-fields button:hover {
+  background-color: rgb(84, 120, 115);
+}
+
+.social-links {
+  display: flex; /* Change to flex to allow wrapping */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content:space-evenly; /* Center items horizontally */
+  gap: 20px; /* Adjust spacing between social links */
+  padding: 5%; /* Adjusted padding */
+  width: 100%;
+  color: rgb(0, 0, 0); /* color_4 */
+}
+
+.social-links a {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: rgb(6, 6, 6); /* color_4 */
+  transition: color 0.3s ease; /* Add transition for color change */
+}
+
+.social-links a:hover {
+  color: rgb(84, 120, 115); /* Hover color */
+}
+
+.input-fields button {
+  margin-top: 5%;
+  background: rgb(10, 74, 110); /* color_1 */
+  color: rgb(8, 8, 8); /* color_4 */
+  border: 1px solid;
+  width: 25%;
+  padding: 2%;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  transition: background-color 1s ease, color 1s ease; /* Add transition for background color and text color */
+}
+
+.input-fields button:hover {
+  background-color: rgb(84, 120, 115); /* color_2 */
+  color: rgb(255, 249, 249); /* Change text color on hover */
+}
+
+/* Media Query for small devices */
+@media screen and (max-width: 1920px) {
+  /* maxViewportSize */
+  .input-fields {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1018px) {
+  /* maxViewportSize */
+  .address {
+    
+    margin-left: -15%;
+   
+  }
+}
+@media screen and (max-width: 800px) {
+  /* maxViewportSize */
+  .address {
+    
+    margin-left: -2%;
+    
+  }
+}
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 600px) {
+  .Ccontent img {
+    display: none; /* Hide image on screens smaller than 600px */
+  }
+
+  .just_Ccontent {
+    color: rgb(12, 14, 21);
+    width: 100%;
+    padding: 3%;
+  }
+
+  .Ccontent {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    background: rgb(250, 250, 242);
+    opacity: 0; /* Initially hidden */
+    animation: slideFromLeft 1s forwards; /* Apply animation */
+  }
+
+  .transparent-form {
+   
+    padding:0%;
+  }
+
+
+  .input-label {
+
+    
+    padding: 5%;
+   
+    justify-content: space-evenly;
+  }
+  
+  .input-fields {
+    padding: 0%;
+   
+  }
+  
+}
+

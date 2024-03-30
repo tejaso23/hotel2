@@ -1,0 +1,141 @@
+/* styles/Nav.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right ul li {
+  display: inline;
+  margin-left: 60px;
+}
+
+.navbar-right ul li:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  font-size: 19px;
+  color: #003f83;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.navbar-right ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.5s ease; /* Slower color transition */
+}
+
+.navbar-right ul li a:hover {
+  color: #007bff;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: transform 1s ease; /* Slower transition for hamburger bars */
+}
+
+.open:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open:nth-child(2) {
+  opacity: 0;
+}
+
+.open:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 1008px) {
+  .navbar {
+    padding: 20px 30px; /* Adjusted padding for smaller screens */
+    height: auto; /* Height increases for smaller screens */
+    position: relative; /* Sticky navigation */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: #ffffff; /* Add background color */
+  }
+
+  .navbar-right ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    transition: all 1s ease; /* Slower transition for hamburger */
+  }
+
+  .navbar-right.show ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff; /* Add background color */
+    width: 100%;
+    padding: 20px 0; /* Add padding for better spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: all 0.5s ease; /* Slower transition */
+    animation: slideFromAbove 1.5s forwards;
+  }
+
+  @keyframes slideFromAbove {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  .navbar-right.show ul li {
+    margin-bottom: 20px; /* Add margin between links */
+  }
+
+  .navbar-right.show ul li:last-child {
+    margin-bottom: 0; /* No margin for the last link */
+  }
+
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}

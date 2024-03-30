@@ -1,0 +1,106 @@
+.reviews {
+  padding: 50px;
+  margin-top: 20px;
+  text-align: center;
+  height: 50vh;
+  position: relative; /* Add position relative to contain absolute positioned bullets */
+}
+
+.slider {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.slide {
+ display: none;
+  height: 100%;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  position: relative;
+  animation: slideIn 1s ease; /* Add slideIn animation */
+
+
+  
+   
+    
+   
+  
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Move the element above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move the element back to its original position */
+  }
+}
+
+.slide.active {
+  display:block;
+ 
+  padding: 5%;
+
+   
+  
+  
+ 
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
+  border: none;
+  padding: 10px;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(97, 97, 97, 0.7);
+}
+
+.prev {
+  left: 0;
+  border-radius: 50%;
+}
+
+.next {
+  right: 0;
+  border-radius: 50%;
+}
+
+.bullets {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bullet {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(166, 166, 166);
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.bullet.active {
+  background-color: black;
+  border: 1px solid white;
+}

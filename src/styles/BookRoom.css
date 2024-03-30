@@ -1,0 +1,80 @@
+.book-room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Ensure items are stacked vertically */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+  padding: 5%;
+}
+
+
+.book-room > h1,.book-room > h3
+{
+  animation: slideFromAbove 2s forwards;
+}
+
+.box {
+  animation: slideFromLeft 2s forwards;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  
+  align-items: center;
+  margin-bottom: 3%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.box img {
+  width: 40%; /* Adjust as needed */
+  height: auto;
+  object-fit: cover;
+}
+
+.box h3{
+  margin-right: 5%;
+  font-size: 80%;
+}
+
+.content {
+  padding: 10px;
+}
+
+.more-details {
+  background-color: #a09f9f81;
+  font-size:small;
+  color: #000000;
+  padding: 10px 20px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+
+.more-details:hover {
+  background-color: #888888;
+}
+
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromAbove {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
