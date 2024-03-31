@@ -3,13 +3,20 @@ import React from 'react';
 import { useState,useEffect } from 'react';
 import '../styles/Home.css';
 
-import home3 from "../Parvatiwoods/Hotel rooms/home3.jpg";
-import home4 from "../Parvatiwoods/Hotel rooms/home4.jpg";
+
+import home1 from "../Parvatiwoods/Home page slides/home1.jpg";
+import home2 from "../Parvatiwoods/Home page slides/home2.jpg";
+import home3 from "../Parvatiwoods/Home page slides/home3.jpg";
+import home4 from "../Parvatiwoods/Home page slides/home4.jpg";
+import home5 from "../Parvatiwoods/Home page slides/home5.jpg";
+import home6 from "../Parvatiwoods/Home page slides/home6.jpg";
+import home7 from "../Parvatiwoods/Home page slides/home7.jpg";
+import home8 from "../Parvatiwoods/Home page slides/home8.jpg";
 
 
 const Home = () => {
 
-  let home14 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714849/kashmir-honeymoon-package-1000x1000_vmehn3.png";
+/*  let home14 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714849/kashmir-honeymoon-package-1000x1000_vmehn3.png";
 
   let home13 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714836/Screenshot_2024-03-29_171630_cleanup_qlrtdw.png";
 
@@ -25,9 +32,11 @@ const Home = () => {
 
   let home12 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714849/kashmir-honeymoon-package-1000x1000_vmehn3.png";
 
+*/
 
+ 
 
-  const images = [home14, home13, home12, home6, home5, home2,home1,home11];
+  const images = [home1, home2, home3, home4, home5, home6,home7,home8];
 
   // State to track the index of the current image
   const [currentImage, setCurrentImage] = useState(0);
