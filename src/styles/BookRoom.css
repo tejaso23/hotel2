@@ -11,6 +11,7 @@
 
 .book-room > h1,.book-room > h3
 {
+  font-size:larger;
   animation: slideFromAbove 2s forwards;
 }
 
@@ -21,7 +22,7 @@
   width: 70%;
   
   align-items: center;
-  margin-bottom: 3%;
+  margin-bottom: 5%;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
@@ -36,6 +37,10 @@
 .box h3{
   margin-right: 5%;
   font-size: 80%;
+}
+
+.box >div >  p {
+  font-size: 90%;
 }
 
 .content {
@@ -76,5 +81,238 @@
     to {
       transform: translateY(0);
       opacity: 1;
+    }
+  }
+
+
+
+
+  .modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 20%; /* Adjust as needed */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation:slideFromAbove 1s forwards
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .amenities {
+    margin-top: 20px;
+  }
+  
+  .amenities h3 {
+    margin-bottom: 10px;
+  }
+  
+  .amenities ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .amenities ul li {
+    margin-bottom: 5px;
+  }
+  
+  @media screen and (max-width: 850px) {
+    .book-room {
+      padding: 2%; /* Adjust padding as needed */
+    }
+    
+    .modal {
+      width: 60%;
+    }
+
+    .box {
+      width: 80%; /* Adjust width as needed */
+    }
+    
+    .box img {
+      width: 30%; /* Adjust image width as needed */
+    }
+
+    .box h3{
+      margin-right: 5%;
+      font-size: 60%;
+    }
+    
+    .box >div >  p {
+      font-size: 80%;
+    }
+  }
+
+
+  
+
+
+  @media screen and (max-width: 690px) {
+    .book-room {
+      padding: 2%; /* Adjust padding as needed */
+    }
+    
+
+    .box {
+      width: 70%; /* Adjust width as needed */
+    }
+    
+    .box img {
+      width: 40%; /* Adjust image width as needed */
+    }
+
+    .box h3{
+      margin-right: 5%;
+      font-size: 60%;
+    }
+    
+    .box >div >  p {
+      font-size: 80%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .book-room {
+      padding: 2%; /* Adjust padding as needed */
+    }
+    .modal {
+      width: 70%;
+    }
+
+    .box {
+      width: 70%; /* Adjust width as needed */
+    }
+    
+    .box img {
+      width: 40%; /* Adjust image width as needed */
+    }
+
+    .box h3{
+      margin-right: 3%;
+      font-size: 30%;
+    }
+    
+    .box >div >  p {
+      font-size: 50%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .book-room {
+      padding: 2%; /* Adjust padding as needed */
+    }
+   
+    .modal {
+      position: absolute;
+      top: 15%; /* Adjust as needed */
+     
+      padding: 10px;
+     animation: slideFromAbove 1s forwards ;
+      /* Adjust font size for h2, h3, and p elements */
+      font-size: 14px; /* Example size, adjust as needed */
+    }
+  
+    /* Additional styles for amenities */
+    .Amenities h3 {
+      font-size: 14px; /* Example size, adjust as needed */
+    }
+  
+    .Amenities ul li {
+      font-size: 14px; /* Example size, adjust as needed */
+    }
+
+   
+
+    .box {
+      width: 80%; /* Adjust width as needed */
+    }
+    
+    .box img {
+      width: 32%; /* Adjust image width as needed */
+    }
+
+    .box h3{
+      margin-right: 3%;
+      font-weight:bold;
+      font-size:0.1ch;
+      
+    }
+    .more-details{
+      width: 8%;
+      
+    }
+    
+    .box >div >  p {
+      font-size: 45%;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .book-room {
+      padding: 2%; /* Adjust padding as needed */
+    }
+    
+
+    .box {
+      width: 80%; /* Adjust width as needed */
+    }
+    
+    .box img {
+      width: 35%; /* Adjust image width as needed */
+    }
+    .modal {
+      width: 90%;
+    }
+    .modal {
+      position: absolute;
+      top: 20%; /* Adjust as needed */
+       width: 50%;
+      padding: 10px;
+     animation: slideFromAbove 1s forwards ;
+      /* Adjust font size for h2, h3, and p elements */
+      font-size: 10px; /* Example size, adjust as needed */
+    }
+  
+    /* Additional styles for amenities */
+    .Amenities h3 {
+      font-size: 10px; /* Example size, adjust as needed */
+    }
+  
+    .Amenities ul li {
+      font-size: 8px; /* Example size, adjust as needed */
+    }
+    
+    .box > h3 {
+      background-color: #a09f9f81;
+      font-size:small;
+      color: #000000;
+      margin-right: 5%;
+      width:min-content;
+      font-weight:540px;
+      font-size:3px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      cursor: pointer;
+    }
+    
+    .box >div >  p {
+      font-size: 20%;
     }
   }

@@ -97,7 +97,7 @@ const Home = () => {
      
 
 
-      <div className="content">
+      {/*<div className="content">
        <img src={home2} alt="Home Slide" > 
             </img>
         <div className='just_content'>
@@ -155,7 +155,8 @@ const Home = () => {
           </div>
          </div> 
           
-       
+       */
+      }
       
     </section>
     
