@@ -1,8 +1,9 @@
 .reviews {
   padding: 50px;
-  margin-top: 20px;
+  
   text-align: center;
-  height: 50vh;
+  background: rgb(247,236,224);
+  height: 75vh;
   position: relative; /* Add position relative to contain absolute positioned bullets */
 }
 

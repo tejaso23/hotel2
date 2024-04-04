@@ -9,7 +9,7 @@ import home2 from "../Parvatiwoods/Home page slides/home2.jpg";
 import home3 from "../Parvatiwoods/Home page slides/home3.jpg";
 import home4 from "../Parvatiwoods/Home page slides/home4.jpg";
 import home5 from "../Parvatiwoods/Home page slides/home5.jpg";
-import home6 from "../Parvatiwoods/Home page slides/home6.jpg";
+import home6 from "../Parvatiwoods/Home page slides/home2.jpg";
 import home7 from "../Parvatiwoods/Home page slides/home7.jpg";
 import home8 from "../Parvatiwoods/Home page slides/home8.jpg";
 
@@ -43,12 +43,25 @@ const Home = () => {
 
   // Function to handle sliding to the next image
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Transition every 1 second
+    let interval;
+
+    
+    if (images[currentImage] === home1) {
+      // If current image is home1, set interval to 10 seconds
+      interval = setInterval(() => {
+        setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+      }, 6000); // 10-second interval
+    } else {
+      // For other images, set the default 5-second interval
+      interval = setInterval(() => {
+        setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+      }, 3000); // 5-second interval
+    }
+
+    
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images.currentImage]);
 
 
   const goToNextImage = () => {
@@ -57,6 +70,10 @@ const Home = () => {
 
   const goToPrevImage = () => {
     setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const goToImage = (index) => {
+    setCurrentImage(index);
   };
 
 
@@ -78,8 +95,20 @@ const Home = () => {
     */}
     
     <div className="image-container">
+      
           <img src={images[currentImage]} alt="Home Slide" />
-
+           <h1>Welcome to the woods</h1>
+          <div className="bullets">
+          {images.map((_, index) => (
+            <span
+              key={index}
+              className={index === currentImage ? 'bullet active' : 'bullet'}
+              onClick={() => goToImage(index)}
+            ></span>
+          ))}
+        </div>
+          
+          
           <button className="nav-btn prev" onClick={goToPrevImage}>
             &lt;
           </button>

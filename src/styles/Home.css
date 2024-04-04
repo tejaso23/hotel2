@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color:rgb( 247,236,224 )
 }
 
 
@@ -13,19 +14,70 @@
   border-radius: 0;
   overflow: hidden;
   object-fit: cover;
+  background: rgb(250, 250, 242); /* Fallback */
+  background: rgba(250, 250, 242, 0.8)
 }
 
 .image-container img {
   width: 100%;
   display: block;
  height: 100%;
+ object-fit:contain;
  
- 
-  object-fit:contain;
   transition: transform 0.5s ease;
   background:rgb(250, 250, 242);
+  animation : slideFromLeft 2sec forwards;
   
 }
+
+
+.image-container h1 {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background:black;
+  color: rgb(255, 255, 255);
+  font-size: 36px; /* Adjust font size as needed */
+  text-align: center;
+  z-index: 1; /* Ensure the text is above the image */
+}
+
+
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bullet.active {
+  background-color: white;
+}
+
 
 .transparent-box {
   position: absolute;
@@ -282,4 +334,75 @@
   object-position: 50% 50%;
   z-index: 0;
 
+}
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    height: 100%;
+  }
+
+  .image-container h1 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+  .nav-btn {
+    font-size: 16px;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    height: 400px; /* Adjust height for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .image-container {
+    height: 300px; /* Further adjust height for even smaller screens */
+  }
+
+  .image-container h1 {
+    font-size: 24px; /* Further adjust font size for even smaller screens */
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  .image-container {
+    height: 280px; /* Further adjust height for even smaller screens */
+  }
+
+  .image-container h1 {
+    font-size: 150%; /* Further adjust font size for even smaller screens */
+    top: 70%; /* Adjust the vertical position of the h1 */
+  }
+
+  .bullets {
+    bottom: 5%; /* Adjust bullet position for smaller screens */
+  }
+
+  .nav-btn {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .image-container {
+    height: 240px; /* Further adjust height for the smallest screens */
+  }
+
+  .image-container h1 {
+    font-size: 100%; /* Further adjust font size for the smallest screens */
+    top: 65%; /* Adjust the vertical position of the h1 */
+  }
+
+  .bullets {
+    margin-bottom: 5%; /* Adjust bullet position for smaller screens */
+  }
+
+  .nav-btn {
+    font-size: 14px;
+  }
 }
