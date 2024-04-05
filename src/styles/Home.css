@@ -92,20 +92,24 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(204, 204, 204, 0.459);
+  background-color: rgba(236, 226, 226, 0.459);
   border: none;
   border-radius: 10px;
-  color: black;
+  color: rgba(139, 137, 137, 0.495);
   font-size: 20px;
   cursor: pointer;
 }
 
 .nav-btn.prev {
   left: 0;
+  background: #e7e0e0;
+  color: #000;
 }
 
 .nav-btn.next {
   right: 0;
+  color: #000;
+  background: #e7e0e0;
 }
 
 /*

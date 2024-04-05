@@ -23,7 +23,7 @@
   position: relative;
   animation: slideIn 1s ease; /* Add slideIn animation */
 
-
+  
   
    
     
@@ -88,6 +88,8 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  flex-wrap: wrap;
+ 
 }
 
 .bullet {
@@ -98,6 +100,7 @@
   border-radius: 50%;
   cursor: pointer;
   margin: 0 5px;
+  margin-bottom: 2px;
   transition: background-color 0.3s;
 }
 

@@ -102,7 +102,7 @@ const BookRoom = () => {
             <p>{roomDetails.description}</p>
             <p>Max Adults: {roomDetails.maxAdults}</p>
             <p>Size: {roomDetails.size}</p>
-
+             <a href="/contact"><h3>Contact</h3></a>
             {/* Amenities section */}
             <div className="Amenities">
                 <h3>Amenities</h3>

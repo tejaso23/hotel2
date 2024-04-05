@@ -3,6 +3,7 @@
 .sliderp {
   padding: 5%;
   width: 90%;
+ height: max-content;
   display: inline-block;
   overflow: hidden;
   animation: slideFromAbove 1s forwards;
@@ -32,10 +33,6 @@
     height: 3px;
   }
   
-  .slides::-webkit-scrollbar-thumb {
-    background: black;
-    border-radius: 5px;
-  }
   
   .slides::-webkit-scrollbar-track {
     background: transparent;
@@ -44,21 +41,28 @@
   .slides > div {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 32%; /* Adjusted width to take full width */
-    height: 56vh;
+    width: 30%; /* Adjusted width to take full width */
+    height:min-content;
     
     background:rgb(247,236,224);
     transform-origin: center center;
     transform: scale(0.7);
     transition: transform 2s; /* Increased transition duration for smoother effect */
     position: relative;
-    display:grid;
+    display:flex;
+    flex-direction: column;
     text-align: center;
-   
-   
-    font-size: 10px;
+   align-items: center;
+   text-wrap:wrap;
+    font-size:x-large;
   }
   
+  .content{
+   
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
   
 
   .slides > div:hover{
@@ -89,20 +93,20 @@
     
   }
   
-  .sliderp > a {
+  /*.sliderp > a {
     margin-top: 3%;
     margin-left: 25%;
     display: inline-flex;
-    width: 0.7%; /* Adjust width as needed */
-    height: 1vh; /* Adjust height as needed */
-    /* Adjusted width and height */
+    width: 0.7%; 
+    height: 1vh; 
+   
     background: rgb(0, 0, 0);
     align-items: center;
     justify-content: center;
     border-radius: 60%;
     position: relative;
     animation: slideFromLeft 2s forwards;
-  }
+  }*/
 
   @keyframes slideFromLeft {
   from {
@@ -137,18 +141,20 @@
     }
   }
 
-  @media (max-width: 500px) {
+  
+  
+  @media (max-width: 750px) {
       
     
  
-    .slides > div >h1{
-      font-size:small;
+    .content{
+      font-size:medium;
     }
 
     .slides > div {
-      margin-top: 10%;
-      width: 60%; /* Set width to 100% for responsiveness */
-      height: auto; /* Allow height to adjust based on content */
+      margin-top: 5%;
+      width: 40%; /* Set width to 100% for responsiveness */
+      height:75vh; /* Allow height to adjust based on content */
       margin-bottom: 10%; /* Add spacing between slides */
       transform: scale(1); /* Reset transform for smaller screens */
       transition: transform 0.5s; /* Adjust transition duration */
@@ -162,5 +168,38 @@
        align-items: center;
     }
   }
-  
-  
+
+
+
+  @media (max-width: 500px) {
+      
+    
+ 
+    .content{
+      font-size:small;
+    }
+
+    .slides > div {
+     
+      width: 70%; /* Set width to 100% for responsiveness */
+      height:60vh; /* Allow height to adjust based on content */
+      margin-bottom: -5%; /* Add spacing between slides */
+      transform: scale(0.7); /* Reset transform for smaller screens */
+      transition: transform 0.5s; /* Adjust transition duration */
+    }
+    .slides > div:hover {
+      transform: scale(1);
+    
+    }
+
+    .slides{
+     height: 200%;
+     margin-bottom: 100px;
+    }
+
+    .sliderp{
+     height: 200%;
+     
+    }
+   
+  }

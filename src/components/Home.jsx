@@ -50,7 +50,7 @@ const Home = () => {
       // If current image is home1, set interval to 10 seconds
       interval = setInterval(() => {
         setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
-      }, 6000); // 10-second interval
+      }, 9000); // 10-second interval
     } else {
       // For other images, set the default 5-second interval
       interval = setInterval(() => {

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "../styles/Contact.css";
 import Footer from "./Footer";
@@ -11,17 +10,18 @@ const Contact = () => {
     firstName: "",
     lastName: "",
     email: "",
-    message: ""
+    phoneNumber: "+91", // Default to India code
+    message: "",
   });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-   
 
     if (
       state.firstName.trim() === "" ||
       state.lastName.trim() === "" ||
       state.email.trim() === "" ||
+      state.phoneNumber.trim() === "" ||
       state.message.trim() === ""
     ) {
       alert("Please fill in all fields.");
@@ -35,19 +35,19 @@ const Contact = () => {
 
     setState({ ...state, submitting: true });
 
-    
     try {
       const response = await fetch("https://formspree.io/f/xgegljbd", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           firstName: state.firstName,
           lastName: state.lastName,
           email: state.email,
-          message: state.message
-        })
+          phoneNumber: state.phoneNumber,
+          message: state.message,
+        }),
       });
 
       if (response.ok) {
@@ -58,12 +58,11 @@ const Contact = () => {
           firstName: "",
           lastName: "",
           email: "",
-          message: ""
+          phoneNumber: "+91",
+          message: "",
         });
-        // Show success message
         alert("Form submitted successfully!");
       } else {
-        // Handle error, maybe show an error message
         console.error("Form submission failed!");
       }
     } catch (error) {
@@ -75,7 +74,7 @@ const Contact = () => {
     const { name, value } = event.target;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -98,9 +97,10 @@ const Contact = () => {
             <form className="transparent-form" onSubmit={handleSubmit}>
               <div className="contact-details">
                 <div className="address">
-                  <p>500 Terry Francine Street, San Francisco, CA 94158</p>
-                  <p>info@mysite.com</p>
-                  <p>123-456-7890</p>
+                  <p>Suma Ropa,Kasol,Kullu,Himachal Pradesh,India</p>
+                  <p>Ujjwal (Owner): 9418016518</p>
+                  <p>Gaurav : 8219951117/ Pankaj : 9459900143</p>
+                  <p></p>
                 </div>
 
                 <div className="input-fields">
@@ -125,7 +125,7 @@ const Contact = () => {
                     />
                   </label>
                   <label className="input-label">
-                    Email
+                    Email.id
                     <input
                       type="email"
                       name="email"
@@ -134,6 +134,60 @@ const Contact = () => {
                       required
                     />
                   </label>
+                  <div className="phone-input">
+                    <label className="input-label">
+                      Country Code
+                      <select
+                        name="countryCode"
+                        className="country-code"
+                        value={state.phoneNumber.substring(0, 3)}
+                        onChange={(e) =>
+                          setState({ ...state, phoneNumber: e.target.value })
+                        }
+                      >
+                        <option value="+91">+91 (India)</option>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (United Kingdom)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+82">+82 (South Korea)</option>
+                        <option value="+65">+65 (Singapore)</option>
+                        <option value="+60">+60 (Malaysia)</option>
+                        <option value="+971">
+                          +971 (United Arab Emirates)
+                        </option>
+                        <option value="+966">+966 (Saudi Arabia)</option>
+                        <option value="+977">+977 (Nepal)</option>
+                        <option value="+880">+880 (Bangladesh)</option>
+                        <option value="+92">+92 (Pakistan)</option>
+                        <option value="+95">+95 (Myanmar)</option>
+                        <option value="+94">+94 (Sri Lanka)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+977">+977 (Nepal)</option>
+                        <option value="+95">+95 (Myanmar)</option>
+                        <option value="+975">+975 (Bhutan)</option>
+                        <option value="+855">+855 (Cambodia)</option>
+                        <option value="+62">+62 (Indonesia)</option>
+                        <option value="+66">+66 (Thailand)</option>
+                        <option value="+84">+84 (Vietnam)</option>
+                        {/* Add more options for other country codes */}
+                      </select>
+                    </label>
+                    <label className="input-label">
+                      Phone No. {/* Added phone number field */}
+                      <input
+                        type="tel"
+                        name="phoneNumber"
+                        value={state.phoneNumber}
+                        maxLength={15}
+                        onChange={handleChange}
+                        required
+                      />
+                    </label>
+                  </div>
                   <label className="input-label">
                     Message
                     <textarea
@@ -154,8 +208,16 @@ const Contact = () => {
                 <a href="#">Instagram</a>
                 <a href="#">Linkedin</a>
               </div>
-              <input type="hidden" name="_subject" value="New Form Submission" />
-              <input type="hidden" name="_next" value="https://your-website.com/thank-you-page" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Form Submission"
+              />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://your-website.com/thank-you-page"
+              />
             </form>
           </div>
         </div>

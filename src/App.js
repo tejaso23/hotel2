@@ -4,7 +4,7 @@ import './styles/App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav.jsx'; // Import Nav component
 import Home from './components/Home.jsx';
-import Property from './components/Property.jsx';
+import Services from './components/Services.jsx';
 import Reviews from './components/Reviews.jsx';
 import BookRoom from './components/BookRoom.jsx';
 import Contact from './components/Contact.jsx';
@@ -17,7 +17,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/property" element={<Property />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/book-room" element={<BookRoom />} />
           <Route path="/contact" element={<Contact />} />
