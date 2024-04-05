@@ -4,7 +4,7 @@ import Footer from './Footer';
 import '../styles/BookRoom.css';
 import home3 from "../Parvatiwoods/Hotel rooms/home3.jpg"
 import { useState } from 'react';
-
+import { Helmet } from 'react-helmet';
 
 
 const BookRoom = () => {
@@ -32,7 +32,11 @@ const BookRoom = () => {
   return (
     <>
 
-     
+<Helmet>
+        <title>Your Website Name - Welcome</title>
+        <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
+        {/* Add more meta tags as needed */}
+      </Helmet>
 
      <section className="book-room">
 

@@ -2,8 +2,10 @@
 
 .sliderp {
   padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
   width: 90%;
- height: max-content;
+ height: 100vh;
   display: inline-block;
   overflow: hidden;
   animation: slideFromAbove 1s forwards;
@@ -20,6 +22,10 @@
   .slides {
    
     display: flex;
+    flex-direction:row;
+   
+    justify-content: center;
+    align-items: center;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -42,8 +48,8 @@
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 30%; /* Adjusted width to take full width */
-    height:min-content;
-    
+    height:100%;
+   
     background:rgb(247,236,224);
     transform-origin: center center;
     transform: scale(0.7);
@@ -58,10 +64,12 @@
   }
   
   .content{
-   
+    font-size: large;
     display: block;
     align-items: center;
     justify-content: center;
+    height: 50%;
+    margin-bottom: 20px;
   }
   
 
@@ -143,22 +151,32 @@
 
   
   
-  @media (max-width: 750px) {
+  @media (max-width: 700px) {
       
+    .slides{
+      height: 200%;
     
+     }
+ 
+     .sliderp{
+      height: 200%;
+      
+     }
  
     .content{
       font-size:medium;
+      height: 50%;
     }
 
-    .slides > div {
-      margin-top: 5%;
-      width: 40%; /* Set width to 100% for responsiveness */
-      height:75vh; /* Allow height to adjust based on content */
-      margin-bottom: 10%; /* Add spacing between slides */
-      transform: scale(1); /* Reset transform for smaller screens */
-      transition: transform 0.5s; /* Adjust transition duration */
-    }
+    
+      .slides > div {
+     
+        width: 70%; /* Set width to 100% for responsiveness */
+        height:150%; /* Allow height to adjust based on content */
+        /* Add spacing between slides */
+        transform: scale(0.7); /* Reset transform for smaller screens */
+        transition: transform 0.5s; /* Adjust transition duration */
+      }
   
     .slides {
       display: flex; /* Change display to block for stacking slides vertically */
@@ -176,14 +194,19 @@
     
  
     .content{
-      font-size:small;
+       
+     
+      height: 50%;
+      font-size: x-small;
+     
     }
+    
 
     .slides > div {
      
       width: 70%; /* Set width to 100% for responsiveness */
-      height:60vh; /* Allow height to adjust based on content */
-      margin-bottom: -5%; /* Add spacing between slides */
+      height:100%; /* Allow height to adjust based on content */
+      margin-bottom: 5%; /* Add spacing between slides */
       transform: scale(0.7); /* Reset transform for smaller screens */
       transition: transform 0.5s; /* Adjust transition duration */
     }

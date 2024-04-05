@@ -2,7 +2,7 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
 import '../styles/Home.css';
-
+import { Helmet } from 'react-helmet';
 
 import home1 from "../Parvatiwoods/Home page slides/home1.jpg";
 import home2 from "../Parvatiwoods/Home page slides/home2.jpg";
@@ -79,6 +79,11 @@ const Home = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Your Website Name - Welcome</title>
+        <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
+        {/* Add more meta tags as needed */}
+      </Helmet>
     <section className="home">
     {/*
     <div className="image-container">

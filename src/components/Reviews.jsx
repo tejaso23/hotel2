@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Reviews.css';
 import Footer from './Footer';
+import { Helmet } from 'react-helmet';
+
+
 
 const Reviews = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,6 +61,11 @@ const Reviews = () => {
 
   return (
     <>
+    <Helmet>
+        <title>Your Website Name - Welcome</title>
+        <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
+        {/* Add more meta tags as needed */}
+      </Helmet>
       <section className="reviews">
         <div className="slider">
           {reviews.map((review, index) => (

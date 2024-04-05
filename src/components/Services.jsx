@@ -5,10 +5,17 @@ import hotel2 from "../Parvatiwoods/Hotel services/slider3.jpg";
 import hotel3 from "../Parvatiwoods/Hotel services/trekking_banner.jpg";
 import "../styles/Services.css"; // Import CSS file for styling
 import Footer from "./Footer";
+import { Helmet } from 'react-helmet';
+
 
 const Services = () => {
   return (
     <>
+    <Helmet>
+        <title>Your Website Name - Welcome</title>
+        <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
+        {/* Add more meta tags as needed */}
+      </Helmet>
       <section className="property-slider">
         {/* Wrapper for the sliding content */}
         <div class="sliderp">

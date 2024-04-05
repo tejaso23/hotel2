@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../styles/Contact.css";
 import Footer from "./Footer";
 import contact1 from "../Parvatiwoods/Contact us page/contact1.jpg";
+import { Helmet } from 'react-helmet';
+
+
 
 const Contact = () => {
   const [state, setState] = useState({
@@ -79,8 +82,14 @@ const Contact = () => {
   };
 
   return (
-    <>
-      <section className="contact">
+    <>{/* Helmet Component to set meta tags */}
+    <Helmet>
+      <title>Contact Us - Your Website Name</title>
+      <meta name="description" content="Contact us for inquiries and support." />
+      {/* Add more meta tags as needed */}
+    </Helmet>
+    <div>
+    <section className="contact">
         <div className="midcon">
           <h1>Contact Us</h1>
           <p>
@@ -222,7 +231,10 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      <Footer></Footer>
+    </div>
+      
+     
     </>
   );
 };
