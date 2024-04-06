@@ -84,7 +84,7 @@ const Contact = () => {
   return (
     <>{/* Helmet Component to set meta tags */}
     <Helmet>
-      <title>Contact Us - Your Website Name</title>
+      <title>Contact Us - ParvatiWoods</title>
       <meta name="description" content="Contact us for inquiries and support." />
       {/* Add more meta tags as needed */}
     </Helmet>

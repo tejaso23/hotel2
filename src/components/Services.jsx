@@ -12,7 +12,7 @@ const Services = () => {
   return (
     <>
     <Helmet>
-        <title>Your Website Name - Welcome</title>
+        <title>Our Services</title>
         <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
         {/* Add more meta tags as needed */}
       </Helmet>

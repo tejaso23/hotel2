@@ -11,39 +11,25 @@ const Reviews = () => {
   const reviews = [
     {
       id: 1,
-      author: 'John Doe',
-      text: 'Great product, highly recommended!'
+      author: 'Sahil Singh',
+      text: 'Great location, really pleasant and clean rooms, but the thing that makes this such a good place to stay are the staff. All of the people are incredibly helpful and generous with their time and advice.'
     },
     {
       id: 2,
-      author: 'Jane Smith',
-      text: 'Excellent service, very satisfied!'
+      author: 'Shreyash Sharma',
+      text: 'The stay was lovely, loved the breakfast which was included. The place was clean and very comfortable Enjoyed the stay.'
     },
     {
       id: 3,
-      author: 'Michael Johnson',
-      text: 'Amazing experience, will definitely come back!'
+      author: 'Vishal chaddha',
+      text: 'Very helpfull and kind staff. Good service. Nice and clean accomodations. Highly recommendable hotel.'
     },
     {
       id: 4,
-      author: 'Emily Brown',
-      text: 'Outstanding quality and value for money!'
+      author: 'Dharmesh Lakhwani',
+      text: 'I had a very pleasant stay. The staff was really helpful and courteous. The location of the hotel is great and close to everything. Regards.'
     },
-    {
-      id: 5,
-      author: 'David Wilson',
-      text: 'Impressed with the professionalism and efficiency!'
-    },
-    {
-      id: 6,
-      author: 'Sarah Lee',
-      text: 'Highly responsive and attentive staff!'
-    },
-    {
-      id: 7,
-      author: 'Alex Clark',
-      text: 'Top-notch service, exceeded my expectations!'
-    }
+    
     // Add more reviews as needed
   ];
 
@@ -62,7 +48,7 @@ const Reviews = () => {
   return (
     <>
     <Helmet>
-        <title>Your Website Name - Welcome</title>
+        <title>ParvatiWoods-Testimonials</title>
         <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
         {/* Add more meta tags as needed */}
       </Helmet>
