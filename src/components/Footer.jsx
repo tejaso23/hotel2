@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <p>Parvati Woods Cottage 97</p>
         <p>parvatiwoodscottage97@gmail.com</p>
-        
+        <p>©2024 by Rishav Sharma</p>
       </div>
     </footer>
   );

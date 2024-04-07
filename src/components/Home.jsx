@@ -12,6 +12,7 @@ import home5 from "../Parvatiwoods/Home page slides/home5.jpg";
 import home6 from "../Parvatiwoods/Home page slides/home2.jpg";
 import home7 from "../Parvatiwoods/Home page slides/home7.jpg";
 import home8 from "../Parvatiwoods/Home page slides/home8.jpg";
+import Footer from './Footer';
 
 
 const Home = () => {
@@ -193,7 +194,7 @@ const Home = () => {
       }
       
     </section>
-    
+    <Footer></Footer>
    
     </>
   );
