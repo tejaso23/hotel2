@@ -109,7 +109,7 @@ const Contact = () => {
                   <p>Suma Ropa,Kasol,Kullu,Himachal Pradesh,India</p>
                   <p>Ujjwal (Owner): 9418016518</p>
                   <p>Gaurav : 8219951117/ Pankaj : 9459900143</p>
-                  <p></p>
+                  
                 </div>
 
                 <div className="input-fields">

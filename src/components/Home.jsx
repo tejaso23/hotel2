@@ -1,23 +1,23 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 // components/Home.js
-import React from 'react';
-import { useState,useEffect } from 'react';
-import '../styles/Home.css';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { useState, useEffect } from "react";
+import "../styles/Home.css";
+import Slider from "./Slider";
+import { Helmet } from "react-helmet";
 
 import home1 from "../Parvatiwoods/Home page slides/home1.jpg";
 import home2 from "../Parvatiwoods/Home page slides/home2.jpg";
 import home3 from "../Parvatiwoods/Home page slides/home3.jpg";
-import home4 from "../Parvatiwoods/Home page slides/home4.jpg";
-import home5 from "../Parvatiwoods/Home page slides/home5.jpg";
-import home6 from "../Parvatiwoods/Home page slides/home2.jpg";
-import home7 from "../Parvatiwoods/Home page slides/home7.jpg";
-import home8 from "../Parvatiwoods/Home page slides/home8.jpg";
-import Footer from './Footer';
 
+import home5 from "../Parvatiwoods/Home page slides/home5.jpg";
+
+import home7 from "../Parvatiwoods/Home page slides/home7.jpg";
+
+import Footer from "./Footer";
 
 const Home = () => {
-
-/*  let home14 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714849/kashmir-honeymoon-package-1000x1000_vmehn3.png";
+  /*  let home14 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714849/kashmir-honeymoon-package-1000x1000_vmehn3.png";
 
   let home13 = "https://res.cloudinary.com/dxoejrovf/image/upload/v1711714836/Screenshot_2024-03-29_171630_cleanup_qlrtdw.png";
 
@@ -35,10 +35,18 @@ const Home = () => {
 
 */
 
- 
+let h1= "https://res.cloudinary.com/dl2zoh4zs/image/upload/v1712696198/rohtang_tpj5rq.jpg";
+let h2= "https://res.cloudinary.com/dl2zoh4zs/image/upload/v1712696198/rohtang_tpj5rq.jpg";
+let h3= "https://res.cloudinary.com/dl2zoh4zs/image/upload/v1712696198/rohtang_tpj5rq.jpg";
 
-  const images = [home1, home2, home3, home4, home5, home6,home7,home8];
+  const images = [home1, home2, home3, home5, home7];
+  const img1 = [h1,h2,h3];
+  const img2= [h1,h2,h3];
+  const img3 = [h1,h2,h3];
 
+
+
+  
   // State to track the index of the current image
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -46,7 +54,6 @@ const Home = () => {
   useEffect(() => {
     let interval;
 
-    
     if (images[currentImage] === home1) {
       // If current image is home1, set interval to 10 seconds
       interval = setInterval(() => {
@@ -59,34 +66,35 @@ const Home = () => {
       }, 3000); // 5-second interval
     }
 
-    
-
     return () => clearInterval(interval);
   }, [images.currentImage]);
-
 
   const goToNextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const goToPrevImage = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
   };
 
   const goToImage = (index) => {
     setCurrentImage(index);
   };
 
-
   return (
     <>
-    <Helmet>
+      <Helmet>
         <title>ParvatiWoods-Home</title>
-        <meta name="description" content="Welcome to Your Website Name. Discover our amazing services and book your stay with us." />
+        <meta
+          name="description"
+          content="Welcome to Your Website Name. Discover our amazing services and book your stay with us."
+        />
         {/* Add more meta tags as needed */}
       </Helmet>
-    <section className="home">
-    {/*
+      <section className="home">
+        {/*
     <div className="image-container">
             <img src={home1} alt="Home Slide" > 
             </img>
@@ -99,22 +107,20 @@ const Home = () => {
     
     
     */}
-    
-    <div className="image-container">
-      
+
+        <div className="image-container">
           <img src={images[currentImage]} alt="Home Slide" />
-           <h1>Welcome to the woods</h1>
+          <h1>Welcome to the woods</h1>
           <div className="bullets">
-          {images.map((_, index) => (
-            <span
-              key={index}
-              className={index === currentImage ? 'bullet active' : 'bullet'}
-              onClick={() => goToImage(index)}
-            ></span>
-          ))}
-        </div>
-          
-          
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={index === currentImage ? "bullet active" : "bullet"}
+                onClick={() => goToImage(index)}
+              ></span>
+            ))}
+          </div>
+
           <button className="nav-btn prev" onClick={goToPrevImage}>
             &lt;
           </button>
@@ -124,39 +130,118 @@ const Home = () => {
           <button className="nav-btn next" onClick={goToNextImage}>
             &gt;
           </button>
-         
-      </div>
-
-    
-    
-     
-
-
-      {/*<div className="content">
-       <img src={home2} alt="Home Slide" > 
-            </img>
-        <div className='just_content'>
-          <h1>Our Property</h1>
-          <p>Vacationing doesn’t have to be a chore; it can be a pleasure. When we first opened Parvati Woods Cottage 97 in 2000, we understood that visitors to the San Francisco area were looking for a property that made them feel at home. If you are searching for a place that is impeccably designed and includes a range of top-notch facilities, you have come to the right place.</p>
-          <button>Book Now</button>
-        </div>
-      </div> 
-
-
-
-        <div className='midcontent'>
-        <h1>What We Provide</h1>
-          <p>At Parvati Woods Cottage 97 you’ll find all the amenities you need for an enjoyable, comfortable stay. We’ve made sure that all the important stuff, along with the little details, are taken care of. No need to overpack or worry. We’ve got you covered.</p>
-          <img src={home3} alt= "img"></img>
         </div>
 
+        <div className="content">
+          <div className="just_content">
+            <h1>About Parvatiwoods</h1>
 
-        <div className='midcontent'>
-        <h1>Fully Furnished</h1>
-          <p>Your comfort and convenience are our top priorities during your stay. We leave you with clear instructions and tips to help you make the most of everything the space has to offer, and we're always available to answer any questions you may have.</p>
+            <div className="roomcontainer">
+              <div className="imageslider">
+              <Slider images = {img1}></Slider>
+              </div>
 
-          <img src={home4} alt= "img"></img>
+              <div className="roomcontent">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci quis placeat aspernatur voluptas sapiente nobis,
+                  rerum explicabo libero impedit porro.
+                </p>
+              </div>
+            </div>
+
+            <div className="roomcontainer">
+              <div className="roomcontent">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci quis placeat aspernatur voluptas sapiente nobis,
+                  rerum explicabo libero impedit porro.
+                </p>
+              </div>
+
+              <div className="imageslider">
+              <Slider images = {img1}></Slider>
+              </div>
+            </div>
+
+            <div className="roomcontainer">
+              <div className="imageslider">
+              <Slider images = {img1}></Slider>
+              </div>
+
+              <div className="roomcontent">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci quis placeat aspernatur voluptas sapiente nobis,
+                  rerum explicabo libero impedit porro.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              These are deluxe lodgings, which are more sophisticated and roomy
+              than economical accommodations. At one of the finest deluxe hotels
+              in Manali, each room is furnished with contemporary conveniences
+              such as a private bathroom featuring a shower, cable television,
+              and everything else you could possibly need for the most
+              comfortable stay possible.
+            </p>
+            <button>
+              <a href="/book-room">Book Now</a>
+            </button>
+          </div>
         </div>
+
+        <div class="midcontent">
+          <h1>Near Locations To Explore</h1>
+          <div className="allimg">
+            <div class="image-wrapper">
+              <img
+                src="https://res.cloudinary.com/dl2zoh4zs/image/upload/v1712696198/rohtang_tpj5rq.jpg"
+                alt="Image 1"
+                class="small-image"
+              ></img>
+              <p>Rohtang Pass</p>
+            </div>
+            <div class="image-wrapper">
+              <img
+                src="https://res.cloudinary.com/dl2zoh4zs/image/upload/t_ c/v1712696511/pexels-pravin-kannah-photography-14572855_qwaide.jpg"
+                alt="Image 2"
+                class="small-image"
+              ></img>
+              <p>Solang Valley</p>
+            </div>
+
+            <div class="image-wrapper">
+              <img
+                src="https://res.cloudinary.com/dl2zoh4zs/image/upload/c_crop,w_3024,h_4032/v1712697499/pexels-iamash-17118365_llfipb.jpg"
+                alt="Image 3"
+                class="small-image"
+              ></img>
+              <p>Old Manali</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="midcontent2">
+          <h1>Reach Us At</h1>
+          <p>Suma Ropa,Kasol,Kullu,Himachal Pradesh,India</p>
+          <p>Ujjwal (Owner): 9418016518</p>
+          <p>Gaurav : 8219951117</p>
+          <p>Pankaj : 9459900143</p>
+          <button>
+            <a href="/contact">Enquiry now</a>
+          </button>
+        </div>
+
+        {/*
+
+
+
+        
+
+
+        
        
        
         <div  className='midcontent'>
@@ -190,14 +275,11 @@ const Home = () => {
           </div>
          </div> 
           
-       */
-      }
-      
-    </section>
-    <Footer></Footer>
-   
+       */}
+      </section>
+      <Footer></Footer>
     </>
   );
-}
+};
 
 export default Home;
