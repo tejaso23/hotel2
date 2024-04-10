@@ -16,17 +16,17 @@ const Reviews = () => {
     },
     {
       id: 2,
-      author: 'Shreyash Sharma',
+      author: 'Rishab Sharma',
       text: 'The stay was lovely, loved the breakfast which was included. The place was clean and very comfortable Enjoyed the stay.'
     },
     {
       id: 3,
-      author: 'Vishal chaddha',
+      author: 'Tejas Narnaware',
       text: 'Very helpfull and kind staff. Good service. Nice and clean accomodations. Highly recommendable hotel.'
     },
     {
       id: 4,
-      author: 'Dharmesh Lakhwani',
+      author: 'Yash Dubey',
       text: 'I had a very pleasant stay. The staff was really helpful and courteous. The location of the hotel is great and close to everything. Regards.'
     },
     
